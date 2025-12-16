@@ -24,7 +24,8 @@
 - **🛠 Use Stack's**
     - 언어: `TypeScript`
     - 베이스: `React`
-    - 스타일: `styled-components`
+    - CSS Style: `styled-components`
+    - Animation: `framer-motion`
     - 기타: `react-router-dom`
 
 ---
