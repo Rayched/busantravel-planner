@@ -11,8 +11,8 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
-    color: white;
-    background-color: black;
+    color: ${(props) => props.theme.TextColor};
+    background-color: ${(props) => props.theme.bgColor};
 `;
 
 const Header = styled.header`
@@ -21,12 +21,11 @@ const Header = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: inherit;
     margin-bottom: 20px;
 `;
 
 const Titles = styled.div`
-    color: white;
     font-weight: bold;
     width: 100%;
     height: 100%;
@@ -65,7 +64,7 @@ const NavWrapper = styled.div`
     position: fixed;
 `;
 
-export default function Layout(){
+export default function RootLayout(){
     const [isDisplay, setDisplay] = useState(false);
 
     return (
@@ -89,7 +88,9 @@ export default function Layout(){
                     ): null
                 }
             </AnimatePresence>
-            <Outlet />
+            <AnimatePresence>
+                <Outlet />
+            </AnimatePresence>
         </Wrapper>
     );
 }

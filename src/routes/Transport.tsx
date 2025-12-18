@@ -1,6 +1,8 @@
+import OutletLayout from "./OutletLayout";
+
 function TransportPage(){
     return (
-        <div>교통편</div>
+        <OutletLayout>교통편</OutletLayout>
     );
 };
 

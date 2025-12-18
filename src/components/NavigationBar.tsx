@@ -14,7 +14,7 @@ interface I_LinkItem {
 const NavBox = styled(motion.div)`
     width: 160px;
     height: 200px;
-    background-color: white;
+    background-color: ${(props) => props.theme.ItemColor};
     position: absolute;
     top: 1.5%;
     right: 3%;
@@ -39,8 +39,8 @@ const LinkItem = styled.li<I_LinkItem>`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
-    background-color: ${(props) => props.pathMatchs ? "gray" : "white"};
+    color: ${(props) => props.theme.ItemTextColor};
+    background-color: ${(props) => props.pathMatchs ? "rgb(87, 96, 111)" : "inherit"};
     border-radius: 15px;
     font-weight: bold;
 `;

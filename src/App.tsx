@@ -1,11 +1,12 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import TransportPage from './routes/Transport';
 import HotelsPage from './routes/Hotels';
 import DetailsPage from './routes/Details';
-import Layout from './routes/Layout';
 import Home from './routes/Home';
+import RootLayout from './routes/RootLayout';
+import { Theme } from './styles/Theme';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ const Wrapper = styled.div`
 const Routers = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <RootLayout />,
     children: [
       {
         path: "",
@@ -43,7 +44,9 @@ const Routers = createBrowserRouter([
 function App() {
   return (
     <Wrapper>
-      <RouterProvider router={Routers} />
+      <ThemeProvider theme={Theme}>
+        <RouterProvider router={Routers} />
+      </ThemeProvider>
     </Wrapper>
   );
 }

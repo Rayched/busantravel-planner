@@ -1,6 +1,10 @@
+import OutletLayout from "./OutletLayout";
+
 function HotelsPage(){
     return (
-        <div>숙소</div>
+        <OutletLayout>
+            <div>숙소</div>
+        </OutletLayout>
     );
 }
 
