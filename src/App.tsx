@@ -39,13 +39,15 @@ const Routers = createBrowserRouter([
       }
     ]
   }
-]);
+], {
+  basename: "/busantravel-planner"
+});
 
 function App() {
   return (
     <Wrapper>
       <ThemeProvider theme={Theme}>
-        <RouterProvider router={Routers} />
+        <RouterProvider router={Routers}/>
       </ThemeProvider>
     </Wrapper>
   );
