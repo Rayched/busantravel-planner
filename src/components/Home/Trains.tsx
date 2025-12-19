@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import TrainInfos from "./TrainInfos";
 
 interface I_CategoryBtn {
     isStart: boolean;
 };
 
-interface I_Infos {
+export interface I_Infos {
     categorys: string;
     startNm: string;
     startTime: string;
@@ -79,6 +80,7 @@ const ItemBodys = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 `;
 
 const StartInfos: I_Infos = {
@@ -99,7 +101,6 @@ const ReturnInfos: I_Infos = {
 
 export default function Trains(){
     const [isStart, setStart] = useState(true);
-    const [Infos, setInfos] = useState<I_Infos>(StartInfos);
 
     return (
         <Container>
@@ -116,14 +117,10 @@ export default function Trains(){
                     {isStart ? null : <SelectedBtn layoutId="selected"/>}
                 </CategoryBtn>
             </Categorys>
-            <ItemBodys></ItemBodys>
+            <ItemBodys>
+                {isStart ? <TrainInfos {...StartInfos} /> : null}
+                {isStart ? null : <TrainInfos {...ReturnInfos} />}
+            </ItemBodys>
         </Container>
     );
 };
-
-/**
- * 데이터 표시 예시
-    분류 이름 시간
-    출발 수원역 10:47
-    도착 부산역 13:37
- */
