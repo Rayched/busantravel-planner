@@ -39,7 +39,7 @@ const LinkItem = styled.li<I_LinkItem>`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${(props) => props.theme.ItemTextColor};
+    color: ${(props) => props.pathMatchs ? "black" : props.theme.ItemTextColor};
     background-color: ${(props) => props.pathMatchs ? "rgb(87, 96, 111)" : "inherit"};
     border-radius: 15px;
     font-weight: bold;
