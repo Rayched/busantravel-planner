@@ -1,8 +1,13 @@
+import styled from "styled-components";
 import OutletLayout from "./OutletLayout";
+import Ticket from "../components/Transport/Ticket";
 
 function TransportPage(){
     return (
-        <OutletLayout>교통편</OutletLayout>
+        <OutletLayout>
+            <Ticket />
+            <Ticket />
+        </OutletLayout>
     );
 };
 

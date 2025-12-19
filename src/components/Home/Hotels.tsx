@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ContainerExtends, ItemHeaders } from "./Commons";
-import { HotelInfos } from "../../PlannerData";
+import { PlannerData } from "../../PlannerData";
 import { GetDayText } from "../../DateFns";
 
 const Container = styled(ContainerExtends)`
@@ -18,7 +18,7 @@ const ItemBodys = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
 `;
 
@@ -40,8 +40,8 @@ const DataCols = styled.div`
 
 export default function Hotels(){
     const {
-        HotelName, HotelAddress, CheckIn, CheckOut
-    } = HotelInfos;
+        hotelNm, hotelAddress, CheckIn, CheckOut
+    } = PlannerData.hotelsData;
 
     const CheckInDays = GetDayText(CheckIn.Dates);
     const CheckOutDays = GetDayText(CheckOut.Dates);
@@ -57,8 +57,8 @@ export default function Hotels(){
                     <div className="heads">체크아웃</div>
                 </DataCols>
                 <DataCols>
-                    <div className="bodys">{HotelName}</div>
-                    <div className="bodys">{HotelAddress}</div>
+                    <div className="bodys">{hotelNm}</div>
+                    <div className="bodys">{hotelAddress}</div>
                     <div className="bodys">
                         {`${CheckIn.Dates} (${CheckInDays}) ${CheckIn.Times}`}
                     </div>

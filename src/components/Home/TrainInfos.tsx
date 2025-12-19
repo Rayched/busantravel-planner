@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import {styled} from "styled-components";
-import { I_Infos } from "./Trains";
+import { I_Ticket } from "../../PlannerData";
 
 const Container = styled(motion.div)`
     width: 90%;
@@ -53,10 +53,10 @@ const InfoVar = {
     }
 };
 
-export default function TrainInfos(Data: I_Infos){
+export default function TrainInfos(Data: I_Ticket){
     return (
         <Container 
-            key={Data.categorys} 
+            key={Data.ticketId} 
             variants={InfoVar} 
             initial="initial" 
             animate="animate"
@@ -74,8 +74,8 @@ export default function TrainInfos(Data: I_Infos){
             </DataCols>
             <DataCols>
                 <div className="head">시간</div>
-                <div className="bodys">{Data.startTime}</div>
-                <div className="bodys">{Data.endTime}</div>
+                <div className="bodys">{Data.startTm}</div>
+                <div className="bodys">{Data.endTm}</div>
             </DataCols>
         </Container>
     );

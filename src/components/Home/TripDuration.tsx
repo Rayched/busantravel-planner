@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ContainerExtends, ItemHeaders} from "./Commons";
 import { GetDayText } from "../../DateFns";
+import { PlannerData } from "../../PlannerData";
 
 const Container = styled(ContainerExtends)`
     height: 30%;
@@ -27,33 +28,24 @@ const ItemBox = styled.div`
         font-weight: bold;
         margin-bottom: 3px;
     };
-    .Texts {};
 `;
-
-const TripDurationInfos = {
-    DataTitle: "📆 여행 기간",
-    DataBodys: [
-        {Category: "출발 일", Texts: "2026-01-15"},
-        {Category: "복귀 일", Texts: "2026-01-17"}
-    ]
-}; 
 
 
 export default function TripDuration(){
-    const {DataTitle, DataBodys} = TripDurationInfos;
+    const {DefaultData} = PlannerData;
 
     return (
         <Container>
-            <ItemHeaders>{DataTitle}</ItemHeaders>
+            <ItemHeaders>📆 여행 기간</ItemHeaders>
             <ItemBodys>
                 {
-                    DataBodys.map((data) => {
-                        const Days = GetDayText(data.Texts)
+                    DefaultData.map((data) => {
+                        const Days = GetDayText(data.DateText)
 
                         return (
-                            <ItemBox>
-                                <div id={data.Category} className="Category">{data.Category}</div>
-                                <div>{`${data.Texts} (${Days})`}</div>
+                            <ItemBox key={data.categoryId}>
+                                <div className="Category">{data.categoryNm}</div>
+                                <div>{`${data.DateText} (${Days})`}</div>
                             </ItemBox>
                         );
                     })

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import TrainInfos from "./TrainInfos";
 import { ContainerExtends, ItemHeaders} from "./Commons";
+import { PlannerData } from "../../PlannerData";
 
 interface I_CategoryBtn {
     isStart: boolean;
@@ -82,6 +83,9 @@ const ReturnInfos: I_Infos = {
 
 export default function Trains(){
     const [isStart, setStart] = useState(true);
+    const {
+        DepartureTicket, ReturnTicket
+    } = PlannerData.transportData;
 
     return (
         <Container>
@@ -99,8 +103,8 @@ export default function Trains(){
                 </CategoryBtn>
             </Categorys>
             <ItemBodys>
-                {isStart ? <TrainInfos {...StartInfos} /> : null}
-                {isStart ? null : <TrainInfos {...ReturnInfos} />}
+                {isStart ? <TrainInfos {...DepartureTicket} /> : null}
+                {isStart ? null : <TrainInfos {...ReturnTicket} />}
             </ItemBodys>
         </Container>
     );
