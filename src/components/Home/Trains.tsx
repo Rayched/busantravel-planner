@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import TrainInfos from "./TrainInfos";
+import { ContainerExtends, ItemHeaders} from "./Commons";
 
 interface I_CategoryBtn {
     isStart: boolean;
@@ -15,28 +16,8 @@ export interface I_Infos {
     endTime: string;
 };
 
-const Container = styled.div`
-    color: ${(props) => props.theme.ItemTextColor};
-    background-color: ${(props) => props.theme.ItemColor};
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+const Container = styled(ContainerExtends)`
     margin-top: 10px;
-    width: 90%;
-    max-width: 400px;
-`;
-
-const ItemHeader = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    height: 30px;
-    padding: 5px 0px;
-    font-weight: bold;
 `;
 
 const Categorys = styled.div`
@@ -104,17 +85,17 @@ export default function Trains(){
 
     return (
         <Container>
-            <ItemHeader>
+            <ItemHeaders>
                 <div className="HeaderText">🚄 교통편</div>
-            </ItemHeader>
+            </ItemHeaders>
             <Categorys>
                 <CategoryBtn isStart={isStart} onClick={() => setStart(true)}>
                     <div className="BtnText">출발</div>
-                    {isStart ? <SelectedBtn layoutId="selected"/> : null}
+                    {isStart ? <SelectedBtn layoutId="selected" transition={{duration: 0.5}}/> : null}
                 </CategoryBtn>
                 <CategoryBtn isStart={!isStart} onClick={() => setStart(false)}>
                     <div className="BtnText">복귀</div>
-                    {isStart ? null : <SelectedBtn layoutId="selected"/>}
+                    {isStart ? null : <SelectedBtn layoutId="selected" transition={{duration: 0.5}}/>}
                 </CategoryBtn>
             </Categorys>
             <ItemBodys>

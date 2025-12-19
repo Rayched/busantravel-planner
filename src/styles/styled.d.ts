@@ -6,5 +6,6 @@ declare module 'styled-components' {
         TextColor: string;
         ItemColor: string;
         ItemTextColor: string;
+        ItemActiveColor: string;
     };
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import TransportPage from './routes/Transport';
-import HotelsPage from './routes/Hotels';
+import HotelsPage from './routes/HotelDetails';
 import DetailsPage from './routes/Details';
 import Home from './routes/Home';
 import RootLayout from './routes/RootLayout';

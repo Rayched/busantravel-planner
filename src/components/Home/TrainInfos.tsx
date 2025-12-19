@@ -7,7 +7,8 @@ const Container = styled(motion.div)`
     max-width: 360px;
     height: 70px;
     border-radius: 15px;
-    background-color: rgb(87, 96, 111);
+    color: black;
+    background-color: ${(props) => props.theme.ItemActiveColor};
     margin: 10px 0px;
     display: flex;
     flex-direction: row;
@@ -46,7 +47,7 @@ const InfoVar = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: 0.3,
+            delay: 0.4,
             duration: 0.5
         }
     }

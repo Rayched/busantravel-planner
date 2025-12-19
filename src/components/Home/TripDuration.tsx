@@ -1,29 +1,10 @@
 import styled from "styled-components";
+import { ContainerExtends, ItemHeaders} from "./Commons";
+import { GetDayText } from "../../DateFns";
 
-const Container = styled.div`
-    color: ${(props) => props.theme.ItemTextColor};
-    background-color: ${(props) => props.theme.ItemColor};
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
+const Container = styled(ContainerExtends)`
     height: 30%;
-    max-width: 400px;
     max-height: 100px;
-`;
-
-const ItemHeaders = styled.div`
-    font-weight: bold;
-    width: 85%;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 5px 0px;
 `;
 
 const ItemBodys = styled.div`
@@ -57,7 +38,6 @@ const TripDurationInfos = {
     ]
 }; 
 
-const DayText = ["일", "월", "화", "수", "목", "금", "토"];
 
 export default function TripDuration(){
     const {DataTitle, DataBodys} = TripDurationInfos;
@@ -68,13 +48,12 @@ export default function TripDuration(){
             <ItemBodys>
                 {
                     DataBodys.map((data) => {
-                        const TargetDt = new Date(data.Texts);
-                        const Days = TargetDt.getDay();
+                        const Days = GetDayText(data.Texts)
 
                         return (
                             <ItemBox>
                                 <div id={data.Category} className="Category">{data.Category}</div>
-                                <div>{`${data.Texts} (${DayText[Days]})`}</div>
+                                <div>{`${data.Texts} (${Days})`}</div>
                             </ItemBox>
                         );
                     })

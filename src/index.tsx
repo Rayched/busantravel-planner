@@ -39,22 +39,26 @@ const GlobalStyle = createGlobalStyle`
   display: block;
   }
   body {
-  line-height: 1;
+    line-height: 1;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
   }
   ol, ul {
-  list-style: none;
+    list-style: none;
   }
   blockquote, q {
-  quotes: none;
+    quotes: none;
   }
   blockquote:before, blockquote:after,
   q:before, q:after {
-  content: '';
-  content: none;
+    content: '';
+    content: none;
   }
   table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
   }
 `;
 
