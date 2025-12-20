@@ -8,7 +8,7 @@ import HotelNoteBox from "../components/Hotels/HotelNote";
 const Container = styled.div`
     width: 85%;
     max-width: 350px;
-    height: 60%;
+    height: 70%;
     color: ${(props) => props.theme.ItemTextColor};
     background-color: ${(props) => props.theme.ItemColor};
     display: flex;
@@ -125,7 +125,7 @@ function HotelsPage(){
             </Container>
             {
                 isShow ? (
-                    <NoteWrapper>
+                    <NoteWrapper onClick={() => setShow(false)}>
                         <HotelNoteBox setStateFn={setShow}/>
                     </NoteWrapper>
                 ) : null

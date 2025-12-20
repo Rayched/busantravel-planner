@@ -95,7 +95,7 @@ const LinkBtn = styled.div`
 `;
 
 const LinkHead = styled.div`
-    width: 45%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -105,7 +105,7 @@ const LinkHead = styled.div`
 `;
 
 const LinkBody = styled.div`
-    width: 50%;
+    width: 40%;
     border-radius: 10px;
     a {
         display: flex;
