@@ -20,7 +20,6 @@ interface I_PlannerData {
     hotelsData: {
         hotelNm: string;
         hotelAddress: string;
-        hotelDetailAddress: string;
         CheckIn: {
             Dates: string;
             Times: string;
@@ -29,7 +28,6 @@ interface I_PlannerData {
             Dates: string;
             Times: string;
         };
-        ExtraInfos: string[];
     };
 };
 
@@ -67,7 +65,6 @@ export const PlannerData: I_PlannerData = {
     hotelsData: {
         hotelNm: "광안 오션뷰 더 테라스",
         hotelAddress: "부산 수영구 광남로 94번길 16",
-        hotelDetailAddress: "403호",
         CheckIn: {
             Dates: "2026-01-15",
             Times: "16:00"
@@ -76,6 +73,5 @@ export const PlannerData: I_PlannerData = {
             Dates: "2026-01-17",
             Times: "12:00"
         },
-        ExtraInfos: ["체크인 전 짐 보관: 위더스오션 20층 사무실"]
     }
 }

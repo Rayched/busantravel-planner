@@ -3,6 +3,7 @@ import OutletLayout from "./OutletLayout";
 import { useState } from "react";
 import { PlannerData } from "../PlannerData";
 import { GetDayText } from "../DateFns";
+import HotelNoteBox from "../components/Hotels/HotelNote";
 
 const Container = styled.div`
     width: 85%;
@@ -63,11 +64,36 @@ const DataCols = styled.div`
     }
 `;
 
+const ShowNoteBtn = styled.div`
+    width: 100px;
+    height: 40px;
+    margin-top: 15px;
+    color: black;
+    background-color: ${(props) => props.theme.ItemActiveColor};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 20px;
+`;
+
+const NoteWrapper = styled.div`
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+`;
+
 function HotelsPage(){
     const [isShow, setShow] = useState(false);
 
     const {
-        hotelNm, hotelAddress, hotelDetailAddress,
+        hotelNm, hotelAddress,
         CheckIn, CheckOut
     } = PlannerData.hotelsData;
 
@@ -94,8 +120,16 @@ function HotelsPage(){
                         <div className="title">체크아웃</div>
                         <div className="bodys">{CheckOutTime}</div>
                     </DataCols>
+                    <ShowNoteBtn onClick={() => setShow(true)}>추가 사항</ShowNoteBtn>
                 </HotelsDataBox>
             </Container>
+            {
+                isShow ? (
+                    <NoteWrapper>
+                        <HotelNoteBox setStateFn={setShow}/>
+                    </NoteWrapper>
+                ) : null
+            }
         </OutletLayout>
     );
 }
