@@ -9,14 +9,6 @@ interface I_CategoryBtn {
     isStart: boolean;
 };
 
-export interface I_Infos {
-    categorys: string;
-    startNm: string;
-    startTime: string;
-    endNm: string;
-    endTime: string;
-};
-
 const Container = styled(ContainerExtends)`
     margin-top: 10px;
 `;
@@ -65,27 +57,10 @@ const ItemBodys = styled.div`
     width: 100%;
 `;
 
-const StartInfos: I_Infos = {
-    categorys: "출발",
-    startNm: "수원역",
-    startTime: "10:47",
-    endNm: "부산역",
-    endTime: "13:35"
-};
-
-const ReturnInfos: I_Infos = {
-    categorys: "복귀",
-    startNm: "부산역",
-    startTime: "13:17",
-    endNm: "수원역",
-    endTime: "15:56"
-};
-
 export default function Trains(){
     const [isStart, setStart] = useState(true);
-    const {
-        DepartureTicket, ReturnTicket
-    } = PlannerData.transportData;
+    const DepartureTicket = PlannerData.transportData[0];
+    const ReturnTicket = PlannerData.transportData[1];
 
     return (
         <Container>

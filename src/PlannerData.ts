@@ -1,6 +1,7 @@
 
 export type I_Ticket = {
     ticketId: string,
+    targetDt: string,
     startNm: string,
     startTm: string,
     endNm: string,
@@ -15,10 +16,7 @@ type I_DefaultData = {
 
 interface I_PlannerData {
     DefaultData: I_DefaultData[];
-    transportData: {
-        DepartureTicket: I_Ticket;
-        ReturnTicket: I_Ticket;
-    };
+    transportData: I_Ticket[];
     hotelsData: {
         hotelNm: string;
         hotelAddress: string;
@@ -48,22 +46,24 @@ export const PlannerData: I_PlannerData = {
             DateText: "2026-01-17"
         }
     ],
-    transportData: {
-        DepartureTicket: {
+    transportData: [
+        {
             ticketId: "20260115start",
+            targetDt: "2026-01-15",
             startNm: "수원역",
             startTm: "10:47",
             endNm: "부산역",
             endTm: "13:35"
         },
-        ReturnTicket: {
+        {
             ticketId: "20260117return",
+            targetDt: "2026-01-17",
             startNm: "부산역",
             startTm: "13:17",
             endNm: "수원역",
             endTm: "15:56"
         }
-    },
+    ],
     hotelsData: {
         hotelNm: "광안 오션뷰 더 테라스",
         hotelAddress: "부산 수영구 광남로 94번길 16",
