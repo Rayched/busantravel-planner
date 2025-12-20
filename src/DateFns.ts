@@ -42,3 +42,24 @@ export const GetDiffs = (TargetDt: string) => {
         return `D-${DiffMS}`;
     }
 };
+
+type T_GetDiffTimes = {
+    StartTime: string,
+    EndTime: string
+};
+
+export const GetDiffTimes = ({StartTime, EndTime}: T_GetDiffTimes) => {
+    const StartMS = new Date(StartTime).getTime();
+    const EndMS = new Date(EndTime).getTime();
+
+    const Diffs = EndMS - StartMS;
+
+    const GetMinutes = (Diffs / (1000 * 60)) % 60;
+
+    const GetHours = Math.floor(Diffs / (1000 * 60 * 60));
+
+    return {
+        hour: GetHours,
+        minute: GetMinutes
+    };
+};
