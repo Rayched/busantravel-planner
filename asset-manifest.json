@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/busantravel-planner/static/js/main.2aaeea0d.js",
+    "main.js": "/busantravel-planner/static/js/main.d805b6ad.js",
     "index.html": "/busantravel-planner/index.html",
-    "main.2aaeea0d.js.map": "/busantravel-planner/static/js/main.2aaeea0d.js.map"
+    "main.d805b6ad.js.map": "/busantravel-planner/static/js/main.d805b6ad.js.map"
   },
   "entrypoints": [
-    "static/js/main.2aaeea0d.js"
+    "static/js/main.d805b6ad.js"
   ]
 }
