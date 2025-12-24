@@ -72,7 +72,8 @@ const NavBoxVariants = {
 const URLList: I_URLList[] = [
     {path: "/transport", name: "🚄 교통편"},
     {path: "/hotels", name: "🏠 숙소"},
-    {path: "/dailyplans", name: "📑 상세 계획"}
+    {path: "/dailyplans", name: "📑 상세 일정"},
+    {path: "/placeinfos", name: "📸 출사지 목록"}
 ];
 
 function NavigationBar(){

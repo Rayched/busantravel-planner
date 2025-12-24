@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import OutletLayout from "./OutletLayout";
+import OutletLayout from "./Layouts/OutletLayout";
 import React, { useEffect, useState } from "react";
 import { DailyPlans, I_DailyPlan } from "../PlannerData";
 import { GetDayText, GetNowDate } from "../DateFns";

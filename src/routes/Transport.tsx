@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import OutletLayout from "./OutletLayout";
+import OutletLayout from "./Layouts/OutletLayout";
 import Ticket from "../components/Transport/Ticket";
 import { PlannerData } from "../PlannerData";
 import { GetDayText } from "../DateFns";

@@ -5,8 +5,9 @@ import TransportPage from './routes/Transport';
 import HotelsPage from './routes/HotelDetails';
 import DailyPlansPage from './routes/DailyPlans';
 import Home from './routes/Home';
-import RootLayout from './routes/RootLayout';
+import RootLayout from './routes/Layouts/RootLayout';
 import { Theme } from './styles/Theme';
+import PlaceInfoPage from './routes/PlaceInfo';
 
 const Wrapper = styled.div`
   display: flex;
@@ -37,6 +38,10 @@ const Routers = createBrowserRouter([
       {
         path: "dailyplans",
         element: <DailyPlansPage />
+      },
+      {
+        path: "placeinfos",
+        element: <PlaceInfoPage />
       }
     ]
   }

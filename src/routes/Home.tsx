@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import OutletLayout from "./OutletLayout";
+import OutletLayout from "./Layouts/OutletLayout";
 import TripDuration from "../components/Home/TripDuration";
 import Trains from "../components/Home/Trains";
 import Hotels from "../components/Home/Hotels";

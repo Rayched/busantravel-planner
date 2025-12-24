@@ -1,6 +1,6 @@
 import { Outlet, Link, useMatch } from "react-router-dom";
 import styled from "styled-components";
-import NavigationBar from "../components/NavigationBar";
+import NavigationBar from "../../components/NavigationBar";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
