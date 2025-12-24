@@ -91,17 +91,17 @@ export const DailyPlans: I_DailyPlan[] = [
     {
         FullDate: "2026-01-15",
         ToDos: [
-            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "07:00", endTm: "08:50", ToDoText: "기상 및 준비 시작"},
+            {openTm: "09:00", endTm: "09:30", ToDoText: "예상 출발 시간"},
+            {openTm: "10:30", endTm: "10:40", ToDoText: "수원역 도착"},
             {openTm: "10:47", endTm: "13:35", ToDoText: "수원 → 부산, KTX"},
             {openTm: "13:40", endTm: "14:30", ToDoText: "부산 도착, 점심 식사"},
-            {openTm: "", endTm: "", ToDoText: ""},
-            {openTm: "", endTm: "", ToDoText: ""},
-            {openTm: "", endTm: "", ToDoText: ""},
-            {openTm: "", endTm: "", ToDoText: ""},
-            {openTm: "", endTm: "", ToDoText: ""},
-            {openTm: "", endTm: "", ToDoText: ""},
-            {openTm: "", endTm: "", ToDoText: ""},
-            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "14:35", endTm: "15:20", ToDoText: "부산역 → 광안리"},
+            {openTm: "15:20", endTm: "16:00", ToDoText: "체크인 전 대기"},
+            {openTm: "16:00", endTm: "16:20", ToDoText: "체크인 및 출사 준비"},
+            {openTm: "16:25", endTm: "17:40", ToDoText: "광안리 → 감천 문화마을"},
+            {openTm: "17:45", endTm: "18:30", ToDoText: "감천 문화마을 출사"},
+            {openTm: "18:35", endTm: "18:40", ToDoText: "1일차 일정 종료"},
         ]
     }, {
         FullDate: "2026-01-16",
