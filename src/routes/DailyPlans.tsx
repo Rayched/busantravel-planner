@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import OutletLayout from "./OutletLayout";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DailyPlans, I_DailyPlan } from "../PlannerData";
-import { GetDayText } from "../DateFns";
+import { GetDayText, GetNowDate } from "../DateFns";
+
+type DatesType = {
+    DateText: string,
+    DateMS: number
+};
 
 const PlanSelect = styled.select`
     color: black;
@@ -37,7 +42,28 @@ function DailyPlansPage(){
             const ToDoData = Plans.find((data) => data.FullDate === value);
             setToDos(ToDoData);
         }
-    }
+    };
+
+    const DefaultToDoSetting = () => {
+        const Dates: DatesType[] = [
+            {DateText: "2026-01-15T00:00:00", DateMS: 1768402800000},
+            {DateText: "2026-01-16T00:00:00", DateMS: 1768489200000},
+            {DateText: "2026-01-17T00:00:00", DateMS: 1768575600000}
+        ];
+
+        const {TodayMS} = GetNowDate();
+
+        //접속 시점 날짜가 1일차 미만 or 1일차인 경우
+        if(TodayMS < Dates[0].DateMS || (Dates[0].DateMS <= TodayMS && Dates[1].DateMS > TodayMS)){
+            setToDos(Plans[0]);
+        } else if(TodayMS >= Dates[1].DateMS && TodayMS < Dates[1].DateMS){
+            setToDos(Plans[1]);
+        } else if(TodayMS >= Dates[2].DateMS){
+            setToDos(Plans[2]);
+        }
+    };
+
+    useEffect(() => DefaultToDoSetting(), []);
 
     return (
         <OutletLayout>
@@ -56,11 +82,15 @@ function DailyPlansPage(){
             <PlanBox key={ToDos?.FullDate}>
                 {
                     ToDos?.ToDos.map((data) => {
-                        return (
-                            <div key={data.ToDoText}>
-                                {`${data.openTm}~${data.endTm}`} {data.ToDoText}
-                            </div>
-                        );
+                        if(data.openTm === "" || data.endTm === ""){
+                            return null;
+                        } else {
+                            return (
+                                <div key={data.ToDoText}>
+                                    {`${data.openTm}~${data.endTm}`} {data.ToDoText}
+                                </div>
+                            );
+                        } 
                     })
                 }
             </PlanBox>

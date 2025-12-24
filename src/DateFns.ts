@@ -16,7 +16,7 @@ const modifys = (targets: number) => {
     }
 };
 
-const GetNowDate = () => {
+export const GetNowDate = () => {
     const NowDate = new Date();
     const FullYear = NowDate.getFullYear();
     const Month = modifys(NowDate.getMonth() + 1);
@@ -24,16 +24,20 @@ const GetNowDate = () => {
 
     const FullDate = `${FullYear}-` + Month + "-" + Dates;
 
-    return FullDate;
+    const TodayMS = new Date(FullDate).getTime();
+
+    return {
+        FullDate: FullDate,
+        TodayMS: TodayMS
+    };
 };
 
 export const GetDiffs = (TargetDt: string) => {
-    const TodayDate = GetNowDate();
-    const TodayToMS = new Date(TodayDate).getTime();
+    const {TodayMS} = GetNowDate();
     const TargetsToMS = new Date(TargetDt).getTime();
 
     const DiffMS = Math.floor(
-        Math.abs((TargetsToMS - TodayToMS) / (24 * 60 * 60 * 1000))
+        Math.abs((TargetsToMS - TodayMS) / (24 * 60 * 60 * 1000))
     );
 
     if(DiffMS === 0){
