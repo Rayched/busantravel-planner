@@ -74,4 +74,62 @@ export const PlannerData: I_PlannerData = {
             Times: "12:00"
         },
     }
-}
+};
+
+type ToDos = {
+    openTm: string,
+    endTm: string,
+    ToDoText: string
+};
+
+export interface I_DailyPlan {
+    FullDate: string;
+    ToDos: ToDos[];
+};
+
+export const DailyPlans: I_DailyPlan[] = [
+    {
+        FullDate: "2026-01-15",
+        ToDos: [
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "10:47", endTm: "13:35", ToDoText: "수원 → 부산, KTX"},
+            {openTm: "13:40", endTm: "14:30", ToDoText: "부산 도착, 점심 식사"},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+        ]
+    }, {
+        FullDate: "2026-01-16",
+        ToDos: [
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+        ]
+    }, {
+        FullDate: "2026-01-17",
+        ToDos: [
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+            {openTm: "", endTm: "", ToDoText: ""},
+        ]
+    }
+];

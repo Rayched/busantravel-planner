@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import TransportPage from './routes/Transport';
 import HotelsPage from './routes/HotelDetails';
-import DetailsPage from './routes/Details';
+import DailyPlansPage from './routes/DailyPlans';
 import Home from './routes/Home';
 import RootLayout from './routes/RootLayout';
 import { Theme } from './styles/Theme';
@@ -34,8 +34,8 @@ const Routers = createBrowserRouter([
         element: <HotelsPage />
       },
       {
-        path: "details",
-        element: <DetailsPage />
+        path: "dailyplans",
+        element: <DailyPlansPage />
       }
     ]
   }
