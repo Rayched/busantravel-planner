@@ -10,6 +10,10 @@ type DatesType = {
     DateMS: number
 };
 
+interface I_ToDoDataBox {
+    nowViewportWidth: number;
+};
+
 const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -24,6 +28,13 @@ const Container = styled.div`
 const PlanSelect = styled.select`
     color: black;
     background-color: white;
+    width: 300px;
+    height: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
 `;
 
 const PlanBox = styled(motion.div)`
@@ -51,7 +62,7 @@ const PlanBox = styled(motion.div)`
     };
 `;
 
-const ToDoDataBox = styled.div`
+const ToDoDataBox = styled.div<I_ToDoDataBox>`
     width: 100%;
     height: 18px;
     margin: 2px 0px;
@@ -79,6 +90,7 @@ const ToDoDataBox = styled.div`
         height: inherit;
         font-size: 15px;
         margin-left: 3px;
+        text-align: ${(props) => props.nowViewportWidth > 360 ? "center" : "left"};
     };
 `;
 
@@ -104,6 +116,7 @@ function DailyPlansPage(){
     const Plans = DailyPlans;
     const [DailyToDos, setDailyToDos] = useState<I_DailyPlan>();
     const [Index, setIndex] = useState(1);
+    const [InnerWidth, setInnerWidth] = useState(window.innerWidth);
 
     const onSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const {currentTarget: {value}} = event;
@@ -149,6 +162,13 @@ function DailyPlansPage(){
 
     useEffect(() => DefaultToDoSetting(), []);
 
+    useEffect(() => {
+        const ResizeListener = () => {
+            setInnerWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", ResizeListener);
+    });
+
     return (
         <Container>
             <PlanSelect onChange={onSelect}>
@@ -176,7 +196,7 @@ function DailyPlansPage(){
                             return null;
                         } else {
                             return (
-                                <ToDoDataBox key={ToDoKey}>
+                                <ToDoDataBox key={ToDoKey} nowViewportWidth={InnerWidth}>
                                     <span className="ToDoTimes">{openTm} ~ {endTm}</span> 
                                     <span className="ToDoText">&nbsp;{ToDoText}</span>
                                 </ToDoDataBox>
