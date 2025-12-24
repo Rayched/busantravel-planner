@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100dvw;
   height: 100dvh;
+  font-family: "NotoSans", "NotoSans-KR";
 `;
 
 const Routers = createBrowserRouter([

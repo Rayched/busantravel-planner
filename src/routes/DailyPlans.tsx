@@ -28,7 +28,8 @@ const Container = styled.div`
 const PlanSelect = styled.select`
     color: black;
     background-color: white;
-    width: 300px;
+    width: 70%;
+    max-width: 300px;
     height: 25px;
     text-align: center;
     font-weight: bold;
@@ -83,7 +84,7 @@ const ToDoDataBox = styled.div<I_ToDoDataBox>`
         color: orange;
         background-color: ${(props) => props.theme.ItemActiveColor};
         font-size: 14px;
-        font-weight: bold;
+        font-family: "D2CodingBold";
     };
     .ToDoText {
         width: 60%;
