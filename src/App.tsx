@@ -7,7 +7,7 @@ import DailyPlansPage from './routes/DailyPlans';
 import Home from './routes/Home';
 import RootLayout from './routes/Layouts/RootLayout';
 import { Theme } from './styles/Theme';
-import PlaceInfoPage from './routes/PlaceInfo';
+import DailyToDosPage from './routes/DailyToDos';
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,8 +40,8 @@ const Routers = createBrowserRouter([
         element: <DailyPlansPage />
       },
       {
-        path: "placeinfos",
-        element: <PlaceInfoPage />
+        path: "dailytodos",
+        element: <DailyToDosPage />
       }
     ]
   }

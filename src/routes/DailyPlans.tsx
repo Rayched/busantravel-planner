@@ -10,7 +10,7 @@ type DatesType = {
     DateMS: number
 };
 
-interface I_ToDoDataBox {
+interface I_PlanDataBox {
     nowViewportWidth: number;
 };
 
@@ -63,7 +63,7 @@ const PlanBox = styled(motion.div)`
     };
 `;
 
-const ToDoDataBox = styled.div<I_ToDoDataBox>`
+const PlanDataBox = styled.div<I_PlanDataBox>`
     width: 100%;
     height: 18px;
     margin: 2px 0px;
@@ -114,8 +114,8 @@ const PlanBoxVariants = {
 };
 
 function DailyPlansPage(){
-    const Plans = DailyPlans;
-    const [DailyToDos, setDailyToDos] = useState<I_DailyPlan>();
+    const GetPlans = DailyPlans;
+    const [Plans, setPlans] = useState<I_DailyPlan>();
     const [Index, setIndex] = useState(1);
     const [InnerWidth, setInnerWidth] = useState(window.innerWidth);
 
@@ -126,10 +126,10 @@ function DailyPlansPage(){
             alert("option value error");
             return;
         } else {
-            const ToDoData = Plans.find((data) => data.FullDate === value);
-            setDailyToDos(ToDoData);
+            const ToDoData = GetPlans.find((data) => data.FullDate === value);
+            setPlans(ToDoData);
             setIndex((state) => {
-                const Idx = Plans.findIndex((data) => data.FullDate === value);
+                const Idx = GetPlans.findIndex((data) => data.FullDate === value);
                 
                 if(Idx === -1){
                     return state;
@@ -151,12 +151,12 @@ function DailyPlansPage(){
 
         //접속 시점 날짜가 1일차 미만 or 1일차인 경우
         if(TodayMS < Dates[0].DateMS || (Dates[0].DateMS <= TodayMS && Dates[1].DateMS > TodayMS)){
-            setDailyToDos(Plans[0]);
+            setPlans(GetPlans[0]);
         } else if(TodayMS >= Dates[1].DateMS && TodayMS < Dates[1].DateMS){
-            setDailyToDos(Plans[1]);
+            setPlans(GetPlans[1]);
             setIndex(2);
         } else if(TodayMS >= Dates[2].DateMS){
-            setDailyToDos(Plans[2]);
+            setPlans(GetPlans[2]);
             setIndex(3);
         }
     };
@@ -174,7 +174,7 @@ function DailyPlansPage(){
         <Container>
             <PlanSelect onChange={onSelect}>
                 {
-                    Plans.map((data, idx) => {
+                    GetPlans.map((data, idx) => {
                         const {FullDate} = data;
                         const Days = GetDayText(FullDate);
 
@@ -189,7 +189,7 @@ function DailyPlansPage(){
             <PlanBox key={`Day0${Index}_Plans`} variants={PlanBoxVariants} initial="init" animate="animate" exit="exit" transition={{type: "tween"}}>
                 <div className="PlanTitle">{Index}일차 일정 목록</div>
                 {
-                    DailyToDos?.ToDos.map((data, idx) => {
+                    Plans?.ToDos.map((data, idx) => {
                         const {openTm, endTm, ToDoText} = data;
                         const ToDoKey = idx < 10 ? `todo0${idx}` : `todo${idx}`;
 
@@ -197,10 +197,10 @@ function DailyPlansPage(){
                             return null;
                         } else {
                             return (
-                                <ToDoDataBox key={ToDoKey} nowViewportWidth={InnerWidth}>
+                                <PlanDataBox key={ToDoKey} nowViewportWidth={InnerWidth}>
                                     <span className="ToDoTimes">{openTm} ~ {endTm}</span> 
                                     <span className="ToDoText">&nbsp;{ToDoText}</span>
-                                </ToDoDataBox>
+                                </PlanDataBox>
                             );
                         }
                     })
