@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/busantravel-planner/static/css/main.d2781d4d.css",
-    "main.js": "/busantravel-planner/static/js/main.d2fd0f93.js",
+    "main.js": "/busantravel-planner/static/js/main.befa8366.js",
     "static/media/NotoSansKR-Regular.ttf": "/busantravel-planner/static/media/NotoSansKR-Regular.36802afd186fbb7643b1.ttf",
     "static/media/D2CodingBold-Ver1.3.2-20180524.ttf": "/busantravel-planner/static/media/D2CodingBold-Ver1.3.2-20180524.9c7c459402c094d1e435.ttf",
     "static/media/NotoSans-Regular.ttf": "/busantravel-planner/static/media/NotoSans-Regular.9ab05beb031b68562995.ttf",
     "index.html": "/busantravel-planner/index.html",
     "main.d2781d4d.css.map": "/busantravel-planner/static/css/main.d2781d4d.css.map",
-    "main.d2fd0f93.js.map": "/busantravel-planner/static/js/main.d2fd0f93.js.map"
+    "main.befa8366.js.map": "/busantravel-planner/static/js/main.befa8366.js.map"
   },
   "entrypoints": [
     "static/css/main.d2781d4d.css",
-    "static/js/main.d2fd0f93.js"
+    "static/js/main.befa8366.js"
   ]
 }
