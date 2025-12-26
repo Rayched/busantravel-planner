@@ -28,13 +28,16 @@ const DataCols = styled.div`
     align-items: center;
     justify-content: center;
     margin: 0px 5px;
+    height: 100%;
+
     .heads {
-        
-        margin: 3px 0px;
+        margin: 5px 0px;
+        font-weight: bold;
     }
 
     .bodys {
-        margin: 3px 0px;
+        margin: 5px 0px;
+        font-weight: normal;
     };
 `;
 
