@@ -199,7 +199,7 @@ function DailyPlansPage(){
                             return (
                                 <PlanDataBox key={ToDoKey} nowViewportWidth={InnerWidth}>
                                     <span className="ToDoTimes">{openTm} ~ {endTm}</span> 
-                                    <span className="ToDoText">&nbsp;{ToDoText}</span>
+                                    <span className="ToDoText">{ToDoText}</span>
                                 </PlanDataBox>
                             );
                         }
