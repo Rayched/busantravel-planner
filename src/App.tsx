@@ -7,6 +7,9 @@ import DailyPlansPage from './routes/DailyPlans';
 import Home from './routes/Home';
 import RootLayout from './routes/Layouts/RootLayout';
 import { Theme } from './styles/Theme';
+import PhotospotsPage from './routes/photospots/Photospots';
+import SpotDetails from './routes/photospots/SpotDetails';
+import SpotEditPage from './routes/photospots/SpotEdit';
 
 const Wrapper = styled.div`
   display: flex;
@@ -38,6 +41,14 @@ const Routers = createBrowserRouter([
         path: "dailyplans",
         element: <DailyPlansPage />
       },
+      {
+        path: "photospots",
+        element: <PhotospotsPage />,
+        children: [
+          {path: ":spotId", element: <SpotDetails />},
+          {path: "spotedit", element: <SpotEditPage />}
+        ]
+      }
     ]
   }
 ], {

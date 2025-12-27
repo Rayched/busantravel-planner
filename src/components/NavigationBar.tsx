@@ -73,6 +73,7 @@ const URLList: I_URLList[] = [
     {path: "/transport", name: "🚄 교통편"},
     {path: "/hotels", name: "🏠 숙소"},
     {path: "/dailyplans", name: "📆 상세 일정"},
+    {path: "/photospots", name: "📸 출사 포인트"}
 ];
 
 function NavigationBar(){
