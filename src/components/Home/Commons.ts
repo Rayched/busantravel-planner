@@ -23,4 +23,11 @@ export const ItemHeaders = styled.div`
     height: 30px;
     padding: 5px 0px;
     font-weight: bold;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        width: 100%;
+        cursor: pointer;
+    }
 `;

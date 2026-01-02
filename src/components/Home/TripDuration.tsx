@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ContainerExtends, ItemHeaders} from "./Commons";
 import { GetDayText } from "../../DateFns";
 import { PlannerData } from "../../PlannerData";
+import { Link } from "react-router-dom";
 
 const Container = styled(ContainerExtends)`
     height: 30%;
@@ -36,7 +37,9 @@ export default function TripDuration(){
 
     return (
         <Container>
-            <ItemHeaders>📆 여행 기간</ItemHeaders>
+            <ItemHeaders>
+                <Link to={"/dailyplans"}>📆 여행 기간</Link>
+            </ItemHeaders>
             <ItemBodys>
                 {
                     DefaultData.map((data) => {

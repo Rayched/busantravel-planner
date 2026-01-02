@@ -4,6 +4,7 @@ import styled from "styled-components";
 import TrainInfos from "./TrainInfos";
 import { ContainerExtends, ItemHeaders} from "./Commons";
 import { PlannerData } from "../../PlannerData";
+import { Link } from "react-router-dom";
 
 interface I_CategoryBtn {
     isStart: boolean;
@@ -65,7 +66,7 @@ export default function Trains(){
     return (
         <Container>
             <ItemHeaders>
-                <div className="HeaderText">🚄 교통편</div>
+                <Link to={"/transport"} className="HeaderText">🚄 교통편</Link>
             </ItemHeaders>
             <Categorys>
                 <CategoryBtn isStart={isStart} onClick={() => setStart(true)}>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ContainerExtends, ItemHeaders } from "./Commons";
 import { PlannerData } from "../../PlannerData";
 import { GetDayText } from "../../DateFns";
+import { Link } from "react-router-dom";
 
 const Container = styled(ContainerExtends)`
     justify-content: flex-start;
@@ -51,7 +52,9 @@ export default function Hotels(){
 
     return (
         <Container>
-            <ItemHeaders>🏠 숙소</ItemHeaders>
+            <ItemHeaders>
+                <Link to={"/hotels"}>🏠 숙소</Link>
+            </ItemHeaders>
             <ItemBodys>
                 <DataCols>
                     <div className="heads">숙소 명</div>
