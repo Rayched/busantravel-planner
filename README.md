@@ -20,6 +20,8 @@
 
 ### 💻 프로젝트 정보
 
+**2026.01.19 배포 중단**
+
 - 📆 작업 기간: `2025.12.15 ~ 2025.12.26`
 - **🛠 Use Stack's**
     - 언어: `TypeScript`
@@ -27,6 +29,5 @@
     - CSS Style: `styled-components`
     - Animation: `framer-motion`
     - 기타: `react-router-dom`
-
 ---
 
